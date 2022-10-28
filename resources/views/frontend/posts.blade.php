@@ -5,12 +5,12 @@
     @forelse ($posts as $post)
 
     <div class="m-4 ">
-        <div class="text-4xl m-1"><a class="text-blue-800" href="post/{{ $post->id }}">{!! $post->title !!}</a></div>
-        <div class="m-1 text-xl"><a class="hover:text-blue-400" href="post/{{ $post->id }}">{!! $post->excerpt !!}</a></div>
+        <div class="text-4xl m-1"><a class="text-blue-800" href="posts/{{ $post->slug }}">{!! $post->title !!}</a></div>
+        <div class="m-1 text-xl"><a class="hover:text-blue-400" href="posts/{{ $post->slug }}">{!! $post->excerpt !!}</a></div>
         <div class="flex space-x-5 text-lg m-1">
             
          @forelse ($post->tags as $tag)
-         <a class="bg-green-300 rounded-lg" href="/tag/{{ $tag->id }}">{{ $tag->name }}</a>
+         <a class="bg-green-300 rounded-lg" href="/tag/{{ $tag->slug }}">{{ $tag->name }}</a>
          @empty
              <div>no tags</div>
          @endforelse

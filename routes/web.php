@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','frontend.welcome');
 Route::get('/blogposts',[PostController::class , 'index']);
 
-Route::get('/post/{id}', [PostController::class ,'show']);
+Route::get('/posts/{slug}', [PostController::class ,'show']);
 
-Route::get('/tag/{id}', [PostController::class , 'showTaggedPosts']);
+Route::get('/tag/{slug}', [PostController::class , 'showTaggedPosts']);

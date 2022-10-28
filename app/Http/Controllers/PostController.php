@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use A17\Twill\Models\Tag as ModelsTag;
 use App\Models\Post;
+use App\Repositories\PostRepository;
+
 
 class PostController extends Controller
 {
@@ -15,20 +17,21 @@ class PostController extends Controller
         return view('frontend.posts',['posts'=>$posts]) ;
     }
 
-    public function show($id)
+    public function show($slug)
 
     {
-      $post =   Post::findOrFail($id);
+      $post = app(PostRepository::class)->forSlugPreview($slug);
 
       return view('frontend.post',['post'=>$post]);
     }
 
-    public function showTaggedPosts($id)
+    
+    public function showTaggedPosts($slug)
 
     {
-       $tag = ModelsTag::find($id);
-       $tagName = $tag->slug ;
-       $posts = Post::withTag( $tagName)->get();
+       
+      
+       $posts = Post::withTag( $slug)->get();
 
       return view('frontend.tags',['posts'=>$posts]);
     }

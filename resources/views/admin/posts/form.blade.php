@@ -21,7 +21,8 @@
     @formField('wysiwyg', [
     'name' => 'content',
     'label' => 'Content',
-    'toolbarOptions' => ['list-ordered', 'list-unordered'],
+    'toolbarOptions' => [ [ 'header' => [1, 2, false] ], 'list-ordered', 'list-unordered', [ 'indent' => '-1'], [ 'indent' => '+1' ] ],
+    'placeholder' => 'Case study text',
     'placeholder' => 'Content of the Blog Post',
     'required' => true,
      ] )
