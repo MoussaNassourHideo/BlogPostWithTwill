@@ -41,6 +41,10 @@ class PostController extends BaseModuleController
             'title' => 'Title',
             'field' => 'title',
         ],
+        'excerpt' => [ // excerpt column
+               'title'=>'Excerpt',
+               'field'=>'excerpt'
+        ]
         
     ];
 

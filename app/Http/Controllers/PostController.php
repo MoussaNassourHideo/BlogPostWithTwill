@@ -29,8 +29,6 @@ class PostController extends Controller
     public function showTaggedPosts($slug)
 
     {
-       
-      
        $posts = Post::withTag( $slug)->get();
 
       return view('frontend.tags',['posts'=>$posts]);
